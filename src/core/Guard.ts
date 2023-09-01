@@ -23,30 +23,33 @@ export class Guard {
     minValue: number,
     actualValue: number,
   ): IGuardResult {
-    return actualValue > minValue
-      ? { succeeded: true }
-      : {
-        succeeded: false,
-        message: `Number given {${actualValue}} is not greater than {${minValue}}`,
-      };
+    const returnSucceeded = { succeeded: true };
+    const returnUnsucceeded = {
+      succeeded: false,
+      message: `Number given {${actualValue}} is not greater than {${minValue}}`,
+    };
+
+    return actualValue > minValue ? returnSucceeded : returnUnsucceeded;
   }
 
   public static againstAtLeast(numChars: number, text: string): IGuardResult {
-    return text.length >= numChars
-      ? { succeeded: true }
-      : {
-        succeeded: false,
-        message: `Text is not at least ${numChars} chars.`,
-      };
+    const returnSucceeded = { succeeded: true };
+    const returnUnsucceeded = {
+      succeeded: false,
+      message: `Text is not at least ${numChars} chars.`,
+    };
+
+    return text.length >= numChars ? returnSucceeded : returnUnsucceeded;
   }
 
   public static againstAtMost(numChars: number, text: string): IGuardResult {
-    return text.length <= numChars
-      ? { succeeded: true }
-      : {
-        succeeded: false,
-        message: `Text is greater than ${numChars} chars.`,
-      };
+    const returnSucceeded = { succeeded: true };
+    const returnUnsucceeded = {
+      succeeded: false,
+      message: `Text is greater than ${numChars} chars.`,
+    };
+
+    return text.length <= numChars ? returnSucceeded : returnUnsucceeded;
   }
 
   public static againstNullOrUndefined(
