@@ -49,14 +49,12 @@ export class Result<T> {
   }
 
   public static combine(results: Result<any>[]): Result<any> {
-    for (let result of results) {
+    for (const result of results) {
       if (result.isFailure) return result;
     }
     return Result.ok();
   }
 }
-
-export type Either<L, A> = Left<L, A> | Right<L, A>;
 
 export class Left<L, A> {
   readonly value: L;
@@ -89,6 +87,8 @@ export class Right<L, A> {
     return true;
   }
 }
+
+export type Either<L, A> = Left<L, A> | Right<L, A>;
 
 export const left = <L, A>(l: L): Either<L, A> => {
   return new Left(l);

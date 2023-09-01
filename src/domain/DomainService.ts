@@ -1,1 +1,2 @@
-export interface DomainService {}
+/* eslint-disable prettier/prettier */
+export interface DomainService { }

@@ -1,9 +1,5 @@
 import { Result } from './Result';
 
-export interface WithChanges {
-  changes: Changes;
-}
-
 export class Changes {
   private changes: Result<any>[];
 
@@ -18,4 +14,8 @@ export class Changes {
   public getChangeResult(): Result<any> {
     return Result.combine(this.changes);
   }
+}
+
+export interface WithChanges {
+  changes: Changes;
 }
