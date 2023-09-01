@@ -1,0 +1,3 @@
+{
+  "extends": "@aleodoni-fullstack/eslint-config/node"
+}
