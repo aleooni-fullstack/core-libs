@@ -36,7 +36,7 @@ export class Guard {
     const returnSucceeded = { succeeded: true };
     const returnUnsucceeded = {
       succeeded: false,
-      message: `Text is not at least ${numChars} chars.`,
+      message: `Text is not at least ${numChars} chars`,
     };
 
     return text.length >= numChars ? returnSucceeded : returnUnsucceeded;
@@ -46,7 +46,7 @@ export class Guard {
     const returnSucceeded = { succeeded: true };
     const returnUnsucceeded = {
       succeeded: false,
-      message: `Text is greater than ${numChars} chars.`,
+      message: `Text is greater than ${numChars} chars`,
     };
 
     return text.length <= numChars ? returnSucceeded : returnUnsucceeded;
@@ -96,10 +96,7 @@ export class Guard {
 
   public static againstEmptyBulk(args: GuardArgumentCollection): IGuardResult {
     for (const arg of args) {
-      const result = this.againstEmpty(
-        arg.argument as string,
-        arg.argumentName,
-      );
+      const result = this.againstEmpty(arg.argument, arg.argumentName);
       if (!result.succeeded) return result;
     }
 
@@ -125,7 +122,7 @@ export class Guard {
         succeeded: false,
         message: `${argumentName} isn't oneOf the correct types in ${JSON.stringify(
           validValues,
-        )}. Got "${value}".`,
+        )}. Got "${value}"`,
       };
     }
   }
@@ -140,7 +137,7 @@ export class Guard {
     if (!isInRange) {
       return {
         succeeded: false,
-        message: `${argumentName} is not within range ${min} to ${max}.`,
+        message: `${argumentName} is not within range ${min} to ${max}`,
       };
     } else {
       return { succeeded: true };
@@ -162,7 +159,7 @@ export class Guard {
     if (failingResult) {
       return {
         succeeded: false,
-        message: `${argumentName} is not within the range.`,
+        message: `${argumentName} is not within the range`,
       };
     } else {
       return { succeeded: true };
