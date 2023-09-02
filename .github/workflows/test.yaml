@@ -1,0 +1,30 @@
+name: core-libs Tests
+
+on: [push, pull_request]
+
+jobs:
+  test-ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache --check-cache
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
