@@ -27,6 +27,6 @@ jobs:
         run: yarn install --immutable --immutable-cache --check-cache
 
       - name: Publish
-        run: yarn npm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
