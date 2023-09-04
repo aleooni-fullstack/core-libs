@@ -26,6 +26,11 @@
     eslint-plugin-react-hooks "^4.5.0"
     prettier "^3.0.0"
 
+"@aleodoni-fullstack/ts-config@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@aleodoni-fullstack/ts-config/-/ts-config-1.0.0.tgz#c10bad2880eb4c7335c8434e588432168a231bb6"
+  integrity sha512-1bd0thYQZ33FtU20gfzqDwoSZORbp4O4178vS1JLFg1rBJCJUjHvqxMC43NkZcF4ekqu+dLUbBYBKlOWIutdSg==
+
 "@babel/runtime@^7.20.7":
   version "7.22.11"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.11.tgz#7a9ba3bbe406ad6f9e8dd4da2ece453eb23a77a4"
