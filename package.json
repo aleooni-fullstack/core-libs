@@ -1,13 +1,14 @@
 {
   "name": "@aleodoni-fullstack/core-libs",
-  "version": "1.0.5",
-  "main": "index.js",
+  "version": "1.0.6",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
     "lint": "eslint src/**/*.ts* --fix",
     "test": "vitest run",
+    "prepublish": "npm run build",
     "test:watch": "vitest watch"
   },
   "devDependencies": {
