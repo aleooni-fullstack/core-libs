@@ -1,6 +1,6 @@
 {
   "name": "@aleodoni-fullstack/core-libs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -15,9 +15,13 @@
     "@aleodoni-fullstack/eslint-config": "1.0.14",
     "@aleodoni-fullstack/ts-config": "1.0.0",
     "@types/node": "^20.5.7",
+    "@types/uuid": "^9.0.8",
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.3"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1"
   }
 }
