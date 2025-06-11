@@ -1,6 +1,6 @@
 {
   "name": "@aleodoni-fullstack/core-libs",
-  "version": "1.0.7",
+  "version": "1.0.11",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -22,6 +22,7 @@
     "vitest": "^0.34.3"
   },
   "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
     "uuid": "^9.0.1"
   }
 }
