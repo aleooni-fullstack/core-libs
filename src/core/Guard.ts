@@ -1,3 +1,5 @@
+import { SafeParseReturnType, z } from 'zod';
+
 export interface IGuardResult {
   succeeded: boolean;
   message?: string;
@@ -175,5 +177,22 @@ export class Guard {
     } else {
       return { succeeded: true };
     }
+  }
+
+  public static zodParse<T>(
+    schema: z.Schema<T>,
+    data: unknown,
+  ): SafeParseReturnType<T, T> {
+    const result = schema.safeParse(data);
+
+    return result;
+  }
+
+  public static async zodParseASync<T>(
+    schema: z.Schema<T>,
+    data: unknown,
+  ): Promise<SafeParseReturnType<T, T>> {
+    const result = await schema.safeParseAsync(data);
+    return result;
   }
 }
